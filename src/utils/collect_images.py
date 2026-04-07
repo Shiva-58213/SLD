@@ -142,6 +142,8 @@ class CaptureImages():
 
             logger.success(f"{img_class}: {class_captured}/{num_images}")
 
+            time.sleep(10)
+
         logger.capture_session_complete(total_captured, len(self.classes))
 
         self.cap.release()
@@ -152,5 +154,5 @@ class CaptureImages():
 # ================= MAIN =================
 
 if __name__ == '__main__':
-    cap = CaptureImages('./data/test', classes, 0)
+    cap = CaptureImages('./data/test/', classes, 0)
     cap.run(num_images=5)

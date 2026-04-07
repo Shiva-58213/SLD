@@ -21,9 +21,9 @@ if __name__ == '__main__':
     test_dataset = DETRData('data/test', train=False) 
     test_dataloader = DataLoader(test_dataset, batch_size=4, collate_fn=stacker, drop_last=True) 
 
-    num_classes = 3 
+    num_classes = 52
     model = DETR(num_classes=num_classes)
-    model.load_pretrained('pretrained/4426_model.pt')
+    # model.load_pretrained('pretrained/4426_model.pt')
     model.log_model_info()
     model.train() 
 
